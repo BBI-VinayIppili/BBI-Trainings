@@ -1,7 +1,8 @@
 const path=require("path");
 const HtmlWebpackPlugin=require("html-webpack-plugin");
+
 module.exports={
-    mode: "production ",
+    mode: "production",
     entry: "./src/App.js",
     output:{
         path:path.resolve(__dirname,"dist"),
@@ -20,5 +21,12 @@ module.exports={
           },
         ],
       },
+      plugins:[
+        new HtmlWebpackPlugin({
+           filename:'index.html',
+            template: './src/index.html'
+        })
+       
+      ]
      
 }
